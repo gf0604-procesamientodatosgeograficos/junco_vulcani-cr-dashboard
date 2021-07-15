@@ -2,8 +2,7 @@
 title: "El junco de los páramos (Junco vulcani)"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+    orientation: rows
 ---
 
 ```{r carga-paquetes, message=FALSE, warning=FALSE}
@@ -50,7 +49,20 @@ junco_vulcani <-
 Registros de presencia, estacionalidad e historial
 =======================================================================
 
-Column {data-width=650}
+Row {data-height=100}
+-----------------------------------------------------------------------
+
+### Registros de presencia {.value-box}
+```{r}
+valueBox(value = nrow(junco_vulcani), 
+         caption = "Registros de presencia", 
+         icon = "fas fa-feather-alt", 
+         color = "blue"
+)
+```
+
+
+Row {data-height=550}
 -----------------------------------------------------------------------
 
 ### Registros de presencia
@@ -66,7 +78,7 @@ junco_vulcani %>%
   )
 ```
 
-Column {data-width=350}
+Row {data-hight=350}
 -----------------------------------------------------------------------
 
 ### Estacionalidad
@@ -106,7 +118,7 @@ junco_vulcani %>%
 Mapa de distribución
 =======================================================================
 
-Column
+Row
 -----------------------------------------------------------------------
 
 ```{r mapa-distribucion}
